@@ -1,48 +1,49 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
+import cuid from 'cuid';
 import EventList from '../EventList/EventList'
 import EventForm from '../EventForm/EventForm'
 
 const eventsDashboard = [
   {
     id: '1',
-    title: 'Trip to Tower of London',
+    title: 'Power Clean',
     date: '2018-03-27T11:00:00+00:00',
     category: 'culture',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
-    city: 'London, UK',
-    venue: "Tower of London, St Katharine's & Wapping, London",
-    hostedBy: 'Bob',
-    hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+      'Hook grip is used by advanced lifters to maintain grip during the clean. Do not jerk weight from floor; arise steadily then accelerate through movement. In a Powre Clean, the barbell is lifted from the floor to the shoulders. The lift is complete when feet are in line and bar is under control.',
+    city: 'Deerfield Beach, FL',
+    venue: "BARWIS Performance Center of South Florida",
+    hostedBy: 'Grant',
+    hostPhotoURL: 'http://www.efficientmovement.com/wp-content/uploads/2016/03/power-clean-e1443212757893.jpg',
     attendees: [
+      {
+        id: 'b',
+        name: 'Zac',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      },
       {
         id: 'a',
         name: 'Bob',
         photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
-      },
-      {
-        id: 'b',
-        name: 'Tom',
-        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
       }
     ]
   },
   {
     id: '2',
-    title: 'Trip to Punch and Judy Pub',
+    title: 'Back Squat',
     date: '2018-03-28T14:00:00+00:00',
     category: 'drinks',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
-    city: 'London, UK',
-    venue: 'Punch & Judy, Henrietta Street, London, UK',
-    hostedBy: 'Tom',
-    hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+      'From rack with barbell at upper chest height, position bar high on back of shoulders and grasp barbell to sides. Dismount bar from rack and stand with shoulder width stance. Squat down by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed in same direction as feet.',
+    city: 'Deerfield Beach, FL',
+    venue: 'BARWIS Performance Center of Port Saint Lucie',
+    hostedBy: 'Zac',
+    hostPhotoURL: 'https://static1.squarespace.com/static/55e406fbe4b0b03c5e7543ae/t/58f896e8b8a79b5ac1884b3c/1492686579787/Barbell+Back+Squats',
     attendees: [
       {
         id: 'b',
-        name: 'Tom',
+        name: 'Zac',
         photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
       },
       {
@@ -62,7 +63,7 @@ class EventDashboard extends Component {
     }
 
 
-handleFormOpen = () =>  {
+handleFormOpen = () => {
   this.setState({
     isOpen: true
   });
@@ -74,6 +75,16 @@ handleCancel = () => {
   });
 };
 
+handleCreateEvent = (newEvent) => {
+  newEvent.id = cuid();
+  newEvent.hostPhotoURL = '/assets/user.png';
+  const updatedEvents = [...this.state.events, newEvent];
+  this.setState({
+    events: updatedEvents,
+    isOpen: false
+  });
+};
+
   render() {
     return (
       <Grid>
@@ -81,9 +92,9 @@ handleCancel = () => {
           <EventList events={this.state.events} />
         </Grid.Column>
         <Grid.Column width={6}>
-        <Button onClick={this.handleFormOpen} positive content='Create Event'/>
-        {this.state.isOpen &&
-        <EventForm handleCancel ={this.handleCancel}/>}
+        <Button onClick={this.handleFormOpen} positive content='Add Exercise'/>
+        {this.state.isOpen && (
+        <EventForm createEvent={this.handleCreateEvent} handleCancel ={this.handleCancel}/>)}
         </Grid.Column>
       </Grid>
     )
