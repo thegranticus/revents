@@ -8,7 +8,7 @@ const eventsDashboard = [
   {
     id: '1',
     title: 'Power Clean',
-    date: '2018-03-27T11:00:00+00:00',
+    date: '2018-03-27',
     category: 'culture',
     description:
       'Hook grip is used by advanced lifters to maintain grip during the clean. Do not jerk weight from floor; arise steadily then accelerate through movement. In a Powre Clean, the barbell is lifted from the floor to the shoulders. The lift is complete when feet are in line and bar is under control.',
@@ -32,7 +32,7 @@ const eventsDashboard = [
   {
     id: '2',
     title: 'Back Squat',
-    date: '2018-03-28T14:00:00+00:00',
+    date: '2018-03-28',
     category: 'drinks',
     description:
       'From rack with barbell at upper chest height, position bar high on back of shoulders and grasp barbell to sides. Dismount bar from rack and stand with shoulder width stance. Squat down by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed in same direction as feet.',
@@ -59,12 +59,14 @@ const eventsDashboard = [
 class EventDashboard extends Component {
     state = {
       events: eventsDashboard,
-      isOpen: false
+      isOpen: false,
+      selectedEvent: null,
     }
 
 
 handleFormOpen = () => {
   this.setState({
+    selectedEvent: null,
     isOpen: true
   });
 };
@@ -85,16 +87,45 @@ handleCreateEvent = (newEvent) => {
   });
 };
 
+handleDeleteEvent = (eventId) => () => {
+  const updatedEvents = this.state.events.filter(e => e.id !== eventId);
+  this.setState({
+    events: updatedEvents
+  });
+};
+
+handleUpdateEvent = (updatedEvent) => {
+  this.setState({
+    events: this.state.events.map(event => {
+      if (event.id === updatedEvent.id) {
+        return Object.assign({}, updatedEvent);
+      } else {
+        return event
+      }
+    }),
+    isOpen: false,
+    selectedEvent: null
+  })
+}
+
+handleOpenEvent = (eventToOpen) => () => {
+  this.setState({
+    selectedEvent: eventToOpen,
+    isOpen: true
+  });
+};
+
   render() {
+    const {selectedEvent} = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
-          <EventList events={this.state.events} />
+          <EventList deleteEvent={this.handleDeleteEvent} onEventOpen={this.handleOpenEvent} events={this.state.events} />
         </Grid.Column>
         <Grid.Column width={6}>
         <Button onClick={this.handleFormOpen} positive content='Add Exercise'/>
         {this.state.isOpen && (
-        <EventForm createEvent={this.handleCreateEvent} handleCancel ={this.handleCancel}/>)}
+        <EventForm  updateEvent={this.handleUpdateEvent} selectedEvent={selectedEvent} createEvent={this.handleCreateEvent} handleCancel ={this.handleCancel}/>)}
         </Grid.Column>
       </Grid>
     )
