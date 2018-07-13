@@ -1,52 +1,58 @@
 import { createReducer } from '../../app/common/util/reducerUtil'
 import { CREATE_EVENT, DELETE_EVENT, UPDATE_EVENT } from './eventConstants'
 
-const initialState = [
+ const initialState = [
     {
       id: '1',
-      title: 'Power Clean',
-      date: '2018-03-27',
+      title: 'Trip to Empire State building',
+      date: '2018-03-21',
       category: 'culture',
-      description:
-        'Hook grip is used by advanced lifters to maintain grip during the clean. Do not jerk weight from floor; arise steadily then accelerate through movement. In a Powre Clean, the barbell is lifted from the floor to the shoulders. The lift is complete when feet are in line and bar is under control.',
-      city: 'Deerfield Beach, FL',
-      venue: "BARWIS Performance Center of South Florida",
-      hostedBy: 'Grant',
-      hostPhotoURL: 'http://www.efficientmovement.com/wp-content/uploads/2016/03/power-clean-e1443212757893.jpg',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+      city: 'NY, USA',
+      venue: 'Empire State Building, 5th Avenue, New York, NY, USA',
+      venueLatLng: {
+        lat: 40.7484405,
+        lng: -73.98566440000002
+      },
+      hostedBy: 'Bob',
+      hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
       attendees: [
-        {
-          id: 'b',
-          name: 'Zac',
-          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
-        },
         {
           id: 'a',
           name: 'Bob',
           photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+        },
+        {
+          id: 'b',
+          name: 'Tom',
+          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
         }
       ]
     },
     {
       id: '2',
-      title: 'Back Squat',
-      date: '2018-03-28',
+      title: 'Trip to Punch and Judy Pub',
+      date: '2018-03-18',
       category: 'drinks',
-      description:
-        'From rack with barbell at upper chest height, position bar high on back of shoulders and grasp barbell to sides. Dismount bar from rack and stand with shoulder width stance. Squat down by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed in same direction as feet.',
-      city: 'Deerfield Beach, FL',
-      venue: 'BARWIS Performance Center of Port Saint Lucie',
-      hostedBy: 'Zac',
-      hostPhotoURL: 'https://static1.squarespace.com/static/55e406fbe4b0b03c5e7543ae/t/58f896e8b8a79b5ac1884b3c/1492686579787/Barbell+Back+Squats',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+      city: 'London, UK',
+      venue: 'Punch & Judy, Henrietta Street, London, UK',
+      venueLatLng: {
+        lat: 51.5118074,
+        lng: -0.12300089999996544
+      },
+      hostedBy: 'Tom',
+      hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
       attendees: [
-        {
-          id: 'b',
-          name: 'Zac',
-          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
-        },
         {
           id: 'a',
           name: 'Bob',
           photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+        },
+        {
+          id: 'b',
+          name: 'Tom',
+          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
         }
       ]
     }
