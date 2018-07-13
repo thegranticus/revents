@@ -26,7 +26,7 @@ const RegisterForm = () => {
             component={TextInput}
             placeholder="Password"
           />
-          <Button fluid size="large" color="teal">
+          <Button fluid size="large" color="green">
             Register
           </Button>
         </Segment>

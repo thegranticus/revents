@@ -123,7 +123,7 @@ class EventForm extends Component {
                 />
         <Grid.Column width={10}>
           <Segment>
-            <Header sub color='teal' content='Exercise Details'/>
+            <Header sub color='black' content='Exercise Details'/>
             <Form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
               <Field
                 name='title'
@@ -145,7 +145,7 @@ class EventForm extends Component {
                 component={TextArea}
                 placeholder='Description of exercise'
               />
-              <Header sub color='teal' content='Location Information'/>
+              <Header sub color='black' content='Location Information'/>
               <Field
                 name='city'
                 type='text'

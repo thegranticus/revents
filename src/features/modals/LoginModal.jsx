@@ -7,6 +7,12 @@ import {closeModal} from "./modalActions";
 
 const actions = {closeModal};
 
+const divStyle = {
+    color: 'white',
+    backgroundColor: 'black',
+    textAlign: 'center'
+}
+
 class LoginModal extends Component {
     render() {
         return (
@@ -15,7 +21,7 @@ class LoginModal extends Component {
                 open={true}
                 onClose={this.props.closeModal}
             >
-                <Modal.Header>
+                <Modal.Header style={divStyle}>
                     Login to the BARWIS Exercise Database
                 </Modal.Header>
                 <Modal.Content>

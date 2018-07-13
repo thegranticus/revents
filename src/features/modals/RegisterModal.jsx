@@ -7,6 +7,12 @@ import RegisterForm from "../auth/Register/RegisterForm";
 
 const actions = {closeModal};
 
+const divStyle = {
+    backgroundColor: 'black',
+    color: 'white',
+    textAlign: 'center'
+}
+
 class RegisterModal extends Component {
     render() {
         return (
@@ -15,7 +21,7 @@ class RegisterModal extends Component {
                 open={true}
                 onClose={this.props.closeModal}
             >
-                <Modal.Header>
+                <Modal.Header style={divStyle}>
                     Sign Up for the BARWIS Exercise Database
                 </Modal.Header>
                 <Modal.Content>
