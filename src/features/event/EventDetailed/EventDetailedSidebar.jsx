@@ -13,7 +13,7 @@ const EventDetailedSidebar = ({ attendees }) => {
         inverted
         color="black"
       >
-        {attendees && attendees.length} {attendees && attendees.length === 1 ? 'Person likes': 'People like'}
+        {attendees && attendees.length} {attendees && attendees.length === 1 ? ' person likes this exercise': ' people like this exercise'}
           </Segment>
       <Segment attached>
         <List relaxed divided>

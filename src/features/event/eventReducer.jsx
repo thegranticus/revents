@@ -4,54 +4,54 @@ import { CREATE_EVENT, DELETE_EVENT, UPDATE_EVENT } from './eventConstants'
  const initialState = [
     {
       id: '1',
-      title: 'Trip to Empire State building',
+      title: 'Power Clean',
       date: '2018-03-21',
       category: 'culture',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
-      city: 'NY, USA',
-      venue: 'Empire State Building, 5th Avenue, New York, NY, USA',
+      description: 'Hook grip is used by advanced lifters to maintain grip during clean. Do not jerk weight from floor; arise steadily then accelerate. In Power Clean, barbell is lifted from floor to shoulders. The lift is complete when feet are in line and bar is under control.',
+      city: 'Plymouth, MI, USA',
+      venue: 'BARWIS Performance Center 44191 Plymouth Oaks Blvd, STE 600',
       venueLatLng: {
-        lat: 40.7484405,
-        lng: -73.98566440000002
+        lat: 42.371246,
+        lng: -83.467617
       },
-      hostedBy: 'Bob',
+      hostedBy: 'Grant',
       hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
       attendees: [
         {
           id: 'a',
-          name: 'Bob',
+          name: 'Grant',
           photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
         },
         {
           id: 'b',
-          name: 'Tom',
+          name: 'Zac',
           photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
         }
       ]
     },
     {
       id: '2',
-      title: 'Trip to Punch and Judy Pub',
+      title: 'Balance Ball Crunches',
       date: '2018-03-18',
       category: 'drinks',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
-      city: 'London, UK',
-      venue: 'Punch & Judy, Henrietta Street, London, UK',
+      description: 'Hang Clean Instructions. Begin with a shoulder width, double overhand or hook grip, with the bar hanging at the mid thigh position. Your back should be straight and inclined slightly forward. Begin by aggressively extending through the hips, knees and ankles, driving the weight upward.',
+      city: 'Deerfield Beach, FL, USA',
+      venue: 'BARWIS Performance Center, 378 Hillsboro Tech Dr, Deerfield Beach, FL 33441',
       venueLatLng: {
-        lat: 51.5118074,
-        lng: -0.12300089999996544
+        lat: 26.3224908,
+        lng: -80.1133099
       },
-      hostedBy: 'Tom',
+      hostedBy: 'Zac',
       hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
       attendees: [
         {
           id: 'a',
-          name: 'Bob',
+          name: 'Grant',
           photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
         },
         {
           id: 'b',
-          name: 'Tom',
+          name: 'Zac',
           photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
         }
       ]
