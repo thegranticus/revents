@@ -37,12 +37,19 @@ const actions = {
 }
 
 const category = [
-    {key: 'drinks', text: 'Drinks', value: 'drinks'},
-    {key: 'culture', text: 'Culture', value: 'culture'},
-    {key: 'film', text: 'Film', value: 'film'},
-    {key: 'food', text: 'Food', value: 'food'},
-    {key: 'music', text: 'Music', value: 'music'},
-    {key: 'travel', text: 'Travel', value: 'travel'},
+    {key: 'injury', text: 'Injury Prevention', value: 'injury'},
+    {key: 'stretch', text: 'Flexibility', value: 'stretch'},
+    {key: 'strength', text: 'Strength', value: 'strength'},
+    {key: 'speed', text: 'Speed', value: 'speed'},
+    {key: 'agility', text: 'Agility', value: 'agility'},
+    {key: 'core', text: 'Core', value: 'core'},
+    {key: 'cardio', text: 'Cardiovascular', value: 'cardio'},
+    {key: 'balance', text: 'Balance & Functional', value: 'balance'},
+    {key: 'plyo', text: 'Plyometric', value: 'plyo'},
+
+
+
+
 ];
 
 const validate = combineValidators({

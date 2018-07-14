@@ -3,7 +3,7 @@ import { Segment, Image, Item, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const eventImageStyle = {
-    filter: 'brightness(30%)'
+    filter: 'brightness(70%)'
 };
 
 const eventImageTextStyle = {
