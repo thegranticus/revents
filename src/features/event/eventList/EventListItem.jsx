@@ -19,7 +19,7 @@ class EventListItem extends Component {
                       <Item.Content>
                         <Item.Header as="a">{event.title}</Item.Header>
                         <Item.Description>
-                          Hosted by <a>{event.hostedBy}</a>
+                          Uploaded by <a>{event.hostedBy}</a>
                         </Item.Description>
                       </Item.Content>
                     </Item>
@@ -27,8 +27,8 @@ class EventListItem extends Component {
                 </Segment>
                 <Segment>
                   <span>
-                    <Icon name="clock" /> {format(event.date, 'dddd Do MMMM' )} at{' '} 
-                    {format(event.date, 'HH:mm')} |
+                    <Icon name="clock" /> {format(event.date.toDate(), 'dddd Do MMMM' )} at{' '} 
+                    {format(event.date.toDate(), 'HH:mm')} |
                     <Icon name="marker" /> {event.venue}
                   </span>
                 </Segment>
