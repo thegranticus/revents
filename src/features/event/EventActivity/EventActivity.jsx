@@ -4,12 +4,9 @@ import { Header, Segment } from 'semantic-ui-react'
 const EventActivity = () => {
     return (
         <div>
-            <Header
-                attached='top'
-                content='Recent Activity'
-            />
+            <Header attached='top' content='Recent Activity' />
             <Segment>
-                <p>Recent Activity</p>
+                Recent Activity
             </Segment>
         </div>
     )
